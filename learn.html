@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>نادي السنبلاوين الرياضي</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .toggle-button {
+            display: block;
+            margin: 10px auto;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-align: center;
+        }
+        
+        .team-icon {
+            display: block;
+            margin: 20px auto;
+            text-align: center;
+        }
+        .team-icon img {
+            width: 100px;
+            height: 100px;
+        }
+        .slider-container {
+            position: relative;
+            width: 80%;
+            margin: auto;
+        }
+        .slides img {
+            width: 100%;
+            height: auto;
+            display: none;
+        }
+        .slides img.active {
+            display: block;
+        }
+        .prev, .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            padding: 16px;
+            font-size: 24px;
+            color: white;
+            background-color: #007bff;
+            border: none;
+            border-radius: 50%;
+            z-index: 10;
+        }
+        .prev {
+            left: 10px;
+        }
+        .next {
+            right: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- الهيدر المدمج -->
+    <header>
+        <img src="photo/270126640_118033307388397_4556695596380744394_n.jpg" alt="شعار النادي" class="header-logo">
+        <div class="header-content">
+            <h1>أهلاً بك في نادي السنبلاوين الرياضي</h1>
+            <p>تابع آخر الأخبار، الصور، والفيديوهات الحصرية</p>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#about">حول</a></li>
+                <li><a href="#photo">اخر الصور</a></li>
+                <li><a href="#video">اخر الفيديوهات</a></li>
+                <li><a href="#news">اخبار النادي</a></li>
+                <li><a href="#schedule">جدول المباريات</a></li>
+                <li><a href="#team-icon">اعضاء الفريق</a></li>
+            </ul>
+        </nav>
+    <div class="slider-container">
+                <button class="prev" onclick="prevSlide()">&#10094;</button>
+                <div class="slides">
+                    <img src="photo/460036989_529786876225805_2979376982870754263_n.jpg" class="active">
+                    <img src="photo/459371223_503225569126634_5346668128862271414_n.jpg">
+                    <img src="photo/270126640_118033307388397_4556695596380744394_n.jpg">
+                    <img src="photo/266775664_112733744585020_4813632058570573109_n.jpg">
+                </div>
+                <button class="next" onclick="nextSlide()">&#10095;</button>
+    </header>
+    <section id="about">
+        <h2>حول الموقع</h2>
+        <button class="toggle-button" onclick="toggleSection('about')">فتح/غلق</button>
+        <div id="about-content">
+            <p>كل ما يخص اخبار نادي السنبلاوين الرياضي من نتائج مباريات وصفقات النادي وجدول الترتيب وصور وفيديوهات</p>
+        </div>
+    </section>
+
+    <section id="team-icon">
+        <h2>اعضاء الفريق</h2>
+        <button class="toggle-button" onclick="toggleSection('team-icon')">فتح/غلق</button>
+        <div id="team-icon-content">
+            <p>أعضاء الفريق من لاعبين واداريين وطاقم طبي</p>
+        </div>
+    </section>
+
+    <section id="photo">
+        <h3>اخر الصور</h3>
+        <button class="toggle-button" onclick="toggleSection('photo')">فتح/غلق</button>
+        <div id="photo-content">
+            <div class="slider-container">
+                <button class="prev" onclick="prevSlide()">&#10094;</button>
+                <div class="slides">
+                    <img src="photo/460036989_529786876225805_2979376982870754263_n.jpg" class="active">
+                    <img src="photo/459371223_503225569126634_5346668128862271414_n.jpg">
+                    <img src="photo/270126640_118033307388397_4556695596380744394_n.jpg">
+                    <img src="photo/266775664_112733744585020_4813632058570573109_n.jpg">
+                <button class="next" onclick="nextSlide()">&#10095;</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="video">
+        <h2>اخر الفيديوهات</h2>
+        <button class="toggle-button" onclick="toggleSection('video')">فتح/غلق</button>
+        <div id="video-content">
+            <p>فيديوهات من التدريبات ومن المباريات</p>
+        </div>
+    </section>
+
+    <section id="news">
+        <h2>اخبار النادي</h2>
+        <button class="toggle-button" onclick="toggleSection('news')">فتح/غلق</button>
+        <div id="news-content">
+            <p>اخبار نادي السنبلاوين</p>
+            <p>يواجه نادي السنبلاوين نادي منيه سمنود في الجوله الاولي من دوري القسم الثالث الساعه 3 ونصف</p>
+        </div>
+    </section>
+
+    <section id="schedule">
+        <h2>جدول المباريات</h2>
+        <button class="toggle-button" onclick="toggleSection('schedule')">فتح/غلق</button>
+        <div id="schedule-content">
+            <p>جدول الترتيب واخر نتيجه وجدول المباريات القادمه والسابقه</p>
+            <img src="photo/الجدول.jpg">
+            <address><p>تعديل *اخر مباراه ستكون مع منيه سمنود</p></address>
+        </div>
+    </section>
+
+    <section id="sponsor">
+        <h3>الراعي</h3>
+        <button class="toggle-button" onclick="toggleSection('sponsor')">فتح/غلق</button>
+        <div id="sponsor-content">
+            <p>الراعي ROADONE</p>
+            <img src="photo/download.png" alt="شعار الراعي" class="sponsor-logo">
+        </div>
+    </section>
+
+    
+    <footer>
+        <p>&copy; 2024 نادي السنبلاوين الرياضي. جميع الحقوق محفوظة.</p>
+    </footer>
+
+    <!-- كود جافا سكريبت للسلايدر وأزرار الفتح/الغلق -->
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slides img');
+
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                slide.classList.toggle('active', i === index);
+            });
+        }
+
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % slides.length;
+            showSlide(currentSlide);
+        }
+
+        function prevSlide() {
+            currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+            showSlide(currentSlide);
+        }
+
+        function toggleSection(sectionId) {
+            const content = document.getElementById(`${sectionId}-content`);
+            content.style.display = (content.style.display === 'none' || content.style.display === '') ? 'block' : 'none';
+        }
+
+        // إخفاء جميع الأقسام بشكل افتراضي
+        document.addEventListener("DOMContentLoaded", function() {
+            const sections = ['about', 'team-icon', 'photo', 'video', 'news', 'schedule', 'sponsor'];
+            sections.forEach(section => {
+                document.getElementById(`${section}-content`).style.display = 'none';
+            });
+        });
+    </script>
+    <script type="module">
+  // Import the functions you need from the SDKs you need
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-app.js";
+import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-analytics.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const firebaseConfig = {
+    apiKey: "AIzaSyCiBDsQXIVI19pDvbi3OMEfuo-Fhlh83Ug",
+    authDomain: "sinbellaween-club.firebaseapp.com",
+    projectId: "sinbellaween-club",
+    storageBucket: "sinbellaween-club.appspot.com",
+    messagingSenderId: "110387238685",
+    appId: "1:110387238685:web:d2d215e07a0829f52033f4",
+    measurementId: "G-ESHVS0KSZE"
+};
+
+  // Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const analytics = getAnalytics(app);
+</script>
+</body>
+</html>
